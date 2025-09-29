@@ -1,0 +1,15 @@
+---
+- name: Check OS ( Firewall )
+  fail: msg="Not a Red Hat based system!"
+  when: ansible_os_family != 'RedHat' or ansible_os_family != 'CentOS'  ansible_os_family != 'Rocky'
+
+
+- name: Install Firewalld
+  import_tasks: install.yml
+  tags: enable, install
+
+
+- name: Uninstall Firewalld
+  import_tasks: uninstall.yml
+  tags: disable, uninstall
+

@@ -1,0 +1,17 @@
+- hosts: localhost
+  tasks:
+    - name: Download Hadoop Software Binaries and Save the into Ansible Files Directory
+      become: true
+      vars:
+        spark_download_version: "{{ _spark.major_version }}.{{ _spark.minor_version }}.{{ _spark.patch_version }}"
+        local_dir: "/home/jomoon/Spark"
+      get_url:
+        url: "{{ item.url }}"
+        dest: "{{ item.dest }}"
+      with_items:
+        - { url: "{{ _spark.download_url }}/spark-{{ spark_download_version }}/spark-{{ spark_download_version }}-bin-hadoop{{ _hadoop.major_version }}.tgz",
+            dest: "{{ local_dir }}/roles/spark/files/spark-{{ spark_download_version }}-bin-hadoop{{ _hadoop.major_version }}.tgz" }
+        - { url: "{{ _spark.download_url }}/spark-{{ spark_download_version }}/spark-{{ spark_download_version }}-bin-without-hadoop.tgz",
+            dest: "{{ local_dir }}/roles/spark/files/spark-{{ spark_download_version }}-bin-without-hadoop.tgz" }
+      tags: download
+
