@@ -12,15 +12,16 @@ Key characteristics and features of Apache Spark:
 In essence, Apache Spark provides a powerful and flexible platform for handling large-scale data analytics and machine learning tasks with high performance and ease of development.
 
 
-### What is the purpose of  this Ansible Playbook?
-It is Ansible Playbook to deploy Apache Spark conveniently on Baremetal, Virtual Machines and Cloud Infrastructure.
-The main purpose of this project is actually very simple. Because i have many jobs to install different kind of Apache Spark versions and reproduce issues & test features as a support
-engineer. I just want to spend less time for it.
-
 ### The Architecture of Apache Spark
 <p align="center">
 <img src="https://github.com/rokmc756/Apache-Spark/blob/main/roles/spark/images/spark-cluster-overview.webp" width="80%" height="80%">
 </p>
+
+
+### What is the purpose of  this Ansible Playbook?
+It is Ansible Playbook to deploy Apache Spark conveniently on Baremetal, Virtual Machines and Cloud Infrastructure.
+The main purpose of this project is actually very simple. Because i have many jobs to install different kind of Apache Spark versions and reproduce issues & test features as a support
+engineer. I just want to spend less time for it.
 
 
 ### Configure Varialbes such as Download Location, Versions, Install/Config Path, Informations
